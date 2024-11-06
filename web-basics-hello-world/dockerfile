@@ -1,0 +1,13 @@
+# syntax=docker/dockerfile:1
+
+# Sử dụng image Nginx chính thức từ Docker Hub
+FROM nginx:alpine
+
+# Sao chép các file HTML, CSS và JS vào thư mục gốc của Nginx
+COPY . /usr/share/nginx/html
+
+# Expose port 80 để truy cập ứng dụng
+EXPOSE 80
+
+# Khởi động Nginx khi container chạy
+CMD ["nginx", "-g", "daemon off;"]
